@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # ^^^shebang, very important to make sure it's exact
 
-printf "%(%Y-%m-%d %H:%M:%S)T\n" 1658179558
-date +%s
-date +%Y-%m-%d\ %H:%M:%S
-printf "%(%Y-%m-%d %H:%M:%S)T\n" $(date +%s)
-printf "%(%Y-%m-%d %H:%M:%S)T\n"
-printf "%(%Y-%m-%d %H:%M:%S)T is %s\n" -1 "the time"
+read -p "What year? [nnnn] " year
+until [[ $year =~ [0-9]{4} ]]; do
+    read -p "A year, please! [nnnn] " year
+done
+echo "Selected year: $year"

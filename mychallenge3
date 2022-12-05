@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# ^^^shebang, very important to make sure it's exact
+
+# Compose a script that responds to user input and uses other elements from earlier in the course
+
+echo -e "\nWelcome to the world of Pokemon!\n
+It's a dangerous world where creatures go around and attack people. It's not safe. \n"
+
+read -p "Oh right, what's your name? " name
+while [[ -z $name ]]
+do
+    read -p "Name!!! GIVE ME A NAME! " name
+done
+echo -e "Oh, hey $name \n\n Listen kid, there's a bunch of wild Pokemon out there trying to mug others for money to buy Poke Treats. You need to protect yourself!"
+
+select pokemon in "Rock" "Knife" "Pepper Spray" "Quit"
+do
+    case $pokemon in
+        Rock) echo "Uhm.. Good choice.. Good luck out there"
+        break;;
+        Knife) echo "Be careful where you point that! Remember to slash, stab, and twist."
+        break;;
+        "Pepper Spray") echo "Spray, Attack, Scream, Run. It's a good tactic."
+        break;;
+        Quit) echo "Sounds like you don't need a Pokemon I guess. Don't blame me! ... Hey kid, do you need Health Insurance?"
+        break;;
+        *) echo "What you say?";;
+    esac
+done
+
+echo "Anyways, now that you got your Pokemon. It's time for you to enjoy your adventure. Good luck $name and capture them for me."

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+echo "Can you guess my favorite number? 1-20"
+
+guess() {
+    declare -i val=$1
+    if [[ $val -lt 17 ]]; then
+        echo "It's too low"
+        elif [[ $val -gt 17 ]]; then
+        echo "It's too high"
+        if [[ $val -gt 20 ]]; then
+            echo "I even said it's between 1-20"
+        fi
+    else
+        echo "You got it!!"
+    fi
+}
+
+guess $1
